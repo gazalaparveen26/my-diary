@@ -81,3 +81,12 @@ button:hover {
   text-align: left;
   font-size: 14px;
 }
+#diary {
+  background: #fffdf7;
+  background-image: repeating-linear-gradient(
+    the bottom,
+    transparent,
+    transparent 28px,
+    #e0e0e0 29px
+  );
+}
