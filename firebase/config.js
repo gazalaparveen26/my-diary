@@ -15,15 +15,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 
-window.signup = async function(){
- let e=email.value,p=password.value;
- await createUserWithEmailAndPassword(auth,e,p);
- alert("Created");
+window.signup = async function () {
+  let e = document.getElementById("email").value;
+  let p = document.getElementById("password").value;
+
+  await createUserWithEmailAndPassword(auth, e, p);
+
+  alert("Account created!");
 }
 
-window.login = async function(){
- let e=email.value,p=password.value;
- await signInWithEmailAndPassword(auth,e,p);
- login.style.display="none";
- diary.style.display="block";
+window.login = async function () {
+  let e = document.getElementById("email").value;
+  let p = document.getElementById("password").value;
+
+  await signInWithEmailAndPassword(auth, e, p);
+
+  // FIX 👇
+  document.getElementById("login").style.display = "none";
+  document.getElementById("diary").style.display = "block";
 }
